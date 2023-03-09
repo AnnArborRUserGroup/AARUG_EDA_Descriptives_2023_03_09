@@ -53,6 +53,8 @@ library(magrittr)
 
 library(gapminder)
 
+library(naniar)
+
 ```
 
 ## Import the Gapminder data set:
@@ -84,6 +86,17 @@ tail(gapminder)
 ```
 
 
+## Visualizing Missing Values:
+
+```{r vissualize-missing-values}
+
+gapminder %>%
+  vis_miss()
+
+
+```
+
+
 ## The 'lapply' command can carry out a function across a list. A dataframe is a list of columns:
 
 ```{r}
@@ -91,6 +104,7 @@ tail(gapminder)
 lapply(gapminder, class)
 
 ```
+
 ### Sometimes you want to clean this up - use the <strong>kable</strong> command:
 
 

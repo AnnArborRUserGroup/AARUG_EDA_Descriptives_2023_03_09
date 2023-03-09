@@ -358,10 +358,32 @@ plot_missing(gapminder)
 
 ```
 
+# References:
 
 
+This document is at:  https://github.com/AnnArborRUserGroup/AARUG_EDA_Descriptives_2023_03_09
+If it moves, search the repository for the file name.
 
 
+# Packages for exploring a df:<p>
+
+
+<strong> There are several packages for quick and easy EDA:</strong><p>
+
+
+*   inspectdf (https://www.littlemissdata.com/blog/inspectdf)<p>
+*    skimr (https://cmdlinetips.com/2018/03/skimr-a-r-package-to-skim-summary-data-effortlessly/, 
+https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-using-skimr-package/)<p>
+*   DataExplorer (https://www.programmingwithr.com/how-to-automate-eda-with-dataexplorer-in-r/)<p>
+
+
+<strong>Posts:</strong><p>
+
+*   My favourite R package for: summarising data (https://dabblingwithdata.amedcalf.com/2018/01/02/my-favourite-r-package-for-summarising-data/)<p>
+*   How to Easily Create Descriptive Summary Statistics Tables in R Studio – By Group (https://thatdatatho.com/easily-create-descriptive-summary-statistic-tables-r-studio/)<p>
+*   Twitter post by 'R-Ladies Jakarta' 'How to inspect your data set using R (https://twitter.com/RLadiesJakarta/status/1273236613410156546)<p>
+*   Quick-R: Descriptive Statistics (https://www.statmethods.net/stats/descriptives.html)<p>
+*   LittleMissData:  Explore Your Dataset in R (https://www.littlemissdata.com/blog/simple-eda)<p>
 
 
 

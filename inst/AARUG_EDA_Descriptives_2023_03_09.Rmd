@@ -81,6 +81,37 @@ tail(gapminder)
 
 ```
 
+
+## The 'lapply' command can carry out a function across a list. A dataframe is a list of columns:
+
+```{r}
+
+lapply(gapminder, class)
+
+```
+Sometimes you want to clean this up - use the <strong><h3>kable</strong></h3> command:
+
+
+```{r lapply-class-kable}
+
+gapminder %>%
+  lapply(., class) %>%
+  as.data.frame() %>%
+  pivot_longer(cols=everything(),
+               names_to='Variable',
+               values_to='Type') %>%
+  dplyr::arrange(Type, Variable ) %>%
+  kable(caption = "<strong><center> Types</center></strong>", full_width = F) %>%
+  # pack_rows(index = c("String Variable" = 4, "Date" = 1,
+  #                     "Numeric" = 4)) %>%
+  column_spec(1, width = "5cm", bold = T) %>%
+  column_spec(2, width = "5cm") 
+
+
+```
+
+
+
 ## Summary table using <strong><h3>pastecs</strong></h3> package:
 
 ```{r pastecs, collapse=TRUE}

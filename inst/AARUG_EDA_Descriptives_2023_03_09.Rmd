@@ -346,9 +346,16 @@ inspect_num(gapminder)  %>% show_plot()
 
 Introduce:
 
-```{r}
+```{r DataExplorer-introduce}
 
 introduce(gapminder)
+```
+Plot missingness:
+
+```{r DataExplorer-plot_missing}
+
+plot_missing(gapminder)
+
 ```
 
 

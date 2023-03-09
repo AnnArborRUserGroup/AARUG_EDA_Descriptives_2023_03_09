@@ -209,6 +209,19 @@ Running the command with no formatting.  It's ugly.
 
 
 gapminder %>%
+  Hmisc::describe() %>%
+
+
+```
+
+
+Cleaning up the output with the <strong>html()</strong> function:
+
+
+```{r describe-then-kable, collapse=TRUE}
+
+
+gapminder %>%
 #  dplyr::select_if( is.numeric) %>%
   Hmisc::describe() %>%
   as.data.frame() %>%
@@ -218,38 +231,7 @@ gapminder %>%
                 ) %>%
   dplyr::select(n, n_missing,Percent_missing ) %>%
   tibble::rownames_to_column("Variable") %>%
-  kable(caption = "<strong>Miassing Values for Numeric Variables</strong>",
-        escape = FALSE,
-        col.names= c("Variable <br/> Name",
-                     "Count <br/>(non-missing)",
-                     "Count <br/>Missing",
-                     "Percent <br/>Missing" )
-  ) %>%
-  column_spec(1, width = "5cm", bold = T)%>%
-  column_spec(2:4, width = "3cm") 
-
-
-
-
-
-```
-
-
-Running the command, and then modifying the output:
-
-```{r describe-then-kable, collapse=TRUE}
-
-gapminder %>%
-  dplyr::select_if( is.numeric) %>%
-  psych::describe() %>%
-  as.data.frame() %>%
-  dplyr::select(n) %>%
-  dplyr::mutate( n_missing = nrow(gapminder ) -n,
-                 Percent_missing =round(100*(n_missing/nrow(gapminder )),1)
-                ) %>%
-  dplyr::select(n, n_missing,Percent_missing ) %>%
-  tibble::rownames_to_column("Variable") %>%
-  kable(caption = "<strong>Miassing Values for Numeric Variables</strong>",
+  kable(caption = "<strong>Missing Values for Numeric Variables</strong>",
         escape = FALSE,
         col.names= c("Variable <br/> Name",
                      "Count <br/>(non-missing)",
@@ -283,7 +265,7 @@ gapminder %>%
                 ) %>%
   dplyr::select(n, n_missing,Percent_missing ) %>%
   tibble::rownames_to_column("Variable") %>%
-  kable(caption = "<strong>Miassing Values for Numeric Variables</strong>",
+  kable(caption = "<strong>Missing Values for Numeric Variables</strong>",
         escape = FALSE,
         col.names= c("Variable <br/> Name",
                      "Count <br/>(non-missing)",

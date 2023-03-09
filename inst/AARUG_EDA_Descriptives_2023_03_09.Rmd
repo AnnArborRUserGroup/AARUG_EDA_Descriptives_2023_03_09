@@ -379,7 +379,7 @@ This document is at:  https://github.com/AnnArborRUserGroup/AARUG_EDA_Descriptiv
 If it moves, search the repository for the file name.
 
 
-# Packages for exploring a df:<p>
+# Packages for exploring a df:
 
 
 <strong> There are several packages for quick and easy EDA:</strong><p>
@@ -400,10 +400,13 @@ https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-us
 *   LittleMissData:  Explore Your Dataset in R (https://www.littlemissdata.com/blog/simple-eda)<p>
 
 
+<strong>Visualizing Missing Data:</strong><p>
+
+*   Gallery of Missing Data Visualizations (https://cran.r-project.org/web/packages/naniar/vignettes/naniar-visualisation.html)<p>
 
 
+<strong>Graphs</strong><p>
 
-
-
+*   The R Graph Gallery (https://r-graph-gallery.com/)<p>
 
 

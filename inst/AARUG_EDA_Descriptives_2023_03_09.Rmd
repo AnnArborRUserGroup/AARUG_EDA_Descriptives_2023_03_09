@@ -36,7 +36,7 @@ library(tidyverse)
 library(inspectdf)
 library(janitor)
 library(skimr)
-library(inspecdf)
+library(inspectdf)
 
 library(Hmisc)
 library(summarytools)
@@ -287,6 +287,8 @@ https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-us
 *   DataExplorer (https://www.programmingwithr.com/how-to-automate-eda-with-dataexplorer-in-r/)<p>
 
 ## Skimr
+
+Plain - you can run it through the kable() function, as above.
 
 ```{r}
 

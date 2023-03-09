@@ -89,7 +89,7 @@ tail(gapminder)
 lapply(gapminder, class)
 
 ```
-Sometimes you want to clean this up - use the <strong><h3>kable</strong></h3> command:
+### Sometimes you want to clean this up - use the <strong>kable</strong> command:
 
 
 ```{r lapply-class-kable}
@@ -101,7 +101,7 @@ gapminder %>%
                names_to='Variable',
                values_to='Type') %>%
   dplyr::arrange(Type, Variable ) %>%
-  kable(caption = "<strong><center> Types</center></strong>", full_width = F) %>%
+  kable(caption = "<strong><center>Variable Classes</center></strong>", full_width = F) %>%
   # pack_rows(index = c("String Variable" = 4, "Date" = 1,
   #                     "Numeric" = 4)) %>%
   column_spec(1, width = "5cm", bold = T) %>%

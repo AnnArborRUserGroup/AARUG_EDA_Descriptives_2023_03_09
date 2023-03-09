@@ -196,21 +196,21 @@ gapminder %>%
 # The <strong>describe<strong> packages
 
 There are two describe commands, one in the Hmisc pacakge, and one in the psych
-package
+package.  We will use the <strong>Hmisc</strong> version
 
 
-## Psyck describe
+## Hmisc Describe
 
 
-Running the command with no formatting:
+Running the command with no formatting.  It's ugly.
 
 
-```{r describe, collapse=TRUE}
+```{r Hmisc-describe, collapse=TRUE}
 
 
 gapminder %>%
-  dplyr::select_if( is.numeric) %>%
-  psych::describe() %>%
+#  dplyr::select_if( is.numeric) %>%
+  Hmisc::describe() %>%
   as.data.frame() %>%
   dplyr::select(n) %>%
   dplyr::mutate( n_missing = nrow(gapminder ) -n,
@@ -264,4 +264,49 @@ gapminder %>%
 
 
 ```
+
+## Describe by Group:
+
+```{r describeBy}
+
+
+
+
+gapminder %>%
+  group_by(year) %>% 
+#  dplyr::select_if( is.numeric) %>%
+  psych::describe()
+  as.data.frame() %>%
+  dplyr::select(n) %>%
+  dplyr::mutate( n_missing = nrow(gapminder ) -n,
+                 Percent_missing =round(100*(n_missing/nrow(gapminder )),1)
+                ) %>%
+  dplyr::select(n, n_missing,Percent_missing ) %>%
+  tibble::rownames_to_column("Variable") %>%
+  kable(caption = "<strong>Miassing Values for Numeric Variables</strong>",
+        escape = FALSE,
+        col.names= c("Variable <br/> Name",
+                     "Count <br/>(non-missing)",
+                     "Count <br/>Missing",
+                     "Percent <br/>Missing" )
+  ) %>%
+  column_spec(1, width = "5cm", bold = T)%>%
+  column_spec(2:4, width = "3cm") 
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

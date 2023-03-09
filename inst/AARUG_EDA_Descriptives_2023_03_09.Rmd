@@ -1,14 +1,22 @@
 ---
 title: "Tables in R for AARUG Presentation"
 author: "Barry DeCicco"
-date: "5/12/2020"
-output: 
-  html_document:
-    toc:  true
-    toc_float: true
-    code_folding: show
+date: "For Ann Arbor R Users' Group, Mar 9, 2023"
+output:   
+  ioslides_presentation:
+    template: quarterly-report.html
+
+
   
 ---
+```{r}
+
+  # html_document:
+  #   toc:  true
+  #   toc_float: true
+  #   code_folding: show
+
+```
 
 ```{r setup,  collapse=TRUE}  
 
@@ -18,6 +26,8 @@ output:
 library(pastecs)
 # https://stats.idre.ucla.edu/r/faq/how-can-i-get-a-table-of-basic-descriptive-statistics-for-my-variables/
 
+# For the gapminder data sets:
+install.packages("gapminder")
 
 library(htmlTable)
 library(psych)

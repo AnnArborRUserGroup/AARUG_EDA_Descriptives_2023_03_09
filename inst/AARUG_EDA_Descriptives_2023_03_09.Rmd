@@ -193,7 +193,7 @@ gapminder %>%
 ```
 
 
-# The <strong>describe<strong> packages
+# The <strong>hmisc::describe</strong> packages
 
 There are two describe commands, one in the Hmisc pacakge, and one in the psych
 package.  We will use the <strong>Hmisc</strong> version

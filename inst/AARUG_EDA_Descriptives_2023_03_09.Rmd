@@ -137,7 +137,7 @@ gapminder %>%
 
 ## Summary table with fewer statistics:
 
-```{r pastecs, collapse=TRUE}
+```{r pastecs-fewer, collapse=TRUE}
 
 
 

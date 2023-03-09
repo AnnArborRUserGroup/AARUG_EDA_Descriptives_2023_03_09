@@ -1,5 +1,5 @@
 ---
-title: "Tables in R for AARUG Presentation"
+title: "EDA and Descriptives in R for AARUG Presentation"
 author: "Barry DeCicco"
 date: "For Ann Arbor R Users' Group, Mar 9, 2023"
 output:  

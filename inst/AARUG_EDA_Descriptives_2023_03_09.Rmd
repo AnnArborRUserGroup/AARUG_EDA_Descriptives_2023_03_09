@@ -112,7 +112,7 @@ gapminder %>%
 
 
 
-## Summary table using <strong><h3>pastecs</strong></h3> package:
+## Summary table using <strong>pastecs</strong> package:
 
 ```{r pastecs, collapse=TRUE}
 

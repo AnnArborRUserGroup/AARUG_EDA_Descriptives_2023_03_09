@@ -36,8 +36,9 @@ library(tidyverse)
 library(inspectdf)
 library(janitor)
 library(skimr)
-library(inspectdf)
-
+library(DataExplorer)
+library(inspectdf)   
+# https://www.r-bloggers.com/part-2-simple-eda-in-r-with-inspectdf/
 library(Hmisc)
 library(summarytools)
 library(readr)
@@ -45,8 +46,7 @@ library(readr)
 # library(devtools)
 # devtools::install_github("alastairrushworth/inspectdf")
 
-library(inspectdf)   
-# https://www.r-bloggers.com/part-2-simple-eda-in-r-with-inspectdf/
+
  
 library(kableExtra)
 library(magrittr)
@@ -310,6 +310,53 @@ gapminder %>%
 
 
 ```
+
+
+## Inspectdf:
+
+
+Plain:
+
+
+```{r inspectdf-plain}
+
+inspect_types(gapminder)  %>% show_plot()
+
+```
+
+
+Missing values:
+
+
+```{r inspectdf-NA}
+
+inspect_na(gapminder)  %>% show_plot()
+
+```
+
+Numeric variables:
+
+```{r inspectdf-num}
+
+inspect_num(gapminder)  %>% show_plot()
+
+```
+
+## DataExplorer:
+
+Introduce:
+
+```{r}
+
+introduce(gapminder)
+```
+
+
+
+
+
+
+
 
 
 

@@ -209,7 +209,7 @@ Running the command with no formatting.  It's ugly.
 
 
 gapminder %>%
-  Hmisc::describe() %>%
+  Hmisc::describe()
 
 
 ```

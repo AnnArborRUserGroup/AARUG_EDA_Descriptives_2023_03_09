@@ -289,16 +289,27 @@ https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-us
 ## Skimr
 
 Plain - you can run it through the kable() function, as above.
+Running it through 'as.dataframe()' lets you use all data manipulation tools.
 
-```{r}
+```{r skimr-plain}
 
 skim(gapminder)
 
 
 ```
 
-
+Choose your own functions, add grouping:
   
+```{r skimr-custom}
+
+gapminder %>% 
+  filter(year==2007) %>%
+  select(continent,lifeExp,gdpPercap)%>%
+  group_by(continent) %>%
+  skim()
+
+
+```
 
 
 

@@ -2,19 +2,20 @@
 title: "Tables in R for AARUG Presentation"
 author: "Barry DeCicco"
 date: "For Ann Arbor R Users' Group, Mar 9, 2023"
-output:   
-  ioslides_presentation:
-    template: quarterly-report.html
+output:  
+  html_document:
+    toc:  true
+    toc_float: true
+    code_folding: show
+
 
 
   
 ---
 ```{r}
 
-  # html_document:
-  #   toc:  true
-  #   toc_float: true
-  #   code_folding: show
+  # ioslides_presentation:
+  #   template: quarterly-report.html
 
 ```
 
@@ -46,6 +47,10 @@ library(inspectdf)
 # https://www.r-bloggers.com/part-2-simple-eda-in-r-with-inspectdf/
  
 library(kableExtra)
+
+
+library(gapminder)
+
 ```
 
 ## Import the Gapminder data set:
@@ -58,9 +63,9 @@ View(gapminder)
 
 ```
 
-## Examine the imported data set:
+# Using Base R Commands to Inspect the Data Frame
 
-#### Make sure that it was imported properly.
+This increases your knowledge of the data set, and catches import errors.
 
 ```{r eda, collapse=TRUE}
 dim(gapminder)
@@ -71,11 +76,12 @@ sapply(gapminder, function(x) sum(is.na(x)/length(x)))
 # https://sebastiansauer.github.io/sum-isna/
 str(gapminder)
 summary(gapminder)
-
+head(gapminder)
+tail(gapminder)
 
 ```
 
-## Summary table using pastecs package:
+## Summary table using <strong><h3>pastecs</strong></h3> package:
 
 ```{r pastecs, collapse=TRUE}
 

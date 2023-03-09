@@ -27,7 +27,7 @@ library(pastecs)
 # https://stats.idre.ucla.edu/r/faq/how-can-i-get-a-table-of-basic-descriptive-statistics-for-my-variables/
 
 # For the gapminder data sets:
-install.packages("gapminder")
+# install.packages("gapminder")
 
 library(htmlTable)
 library(psych)

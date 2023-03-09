@@ -163,7 +163,7 @@ gapminder %>%
 First, convert the row names to a column.
 
 
-```{r pastecs, collapse=TRUE}
+```{r pastecs-then-kable, collapse=TRUE}
 
 
 

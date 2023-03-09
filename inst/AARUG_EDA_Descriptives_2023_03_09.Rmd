@@ -127,6 +127,25 @@ gapminder %>%
   select_if(is.numeric) %>% 
   stat.desc()
 
+
+
+
+
+```
+
+
+
+## Summary table with fewer statistics:
+
+```{r pastecs, collapse=TRUE}
+
+
+
+# Set formatting options: 
+
+options(scipen=100)
+options(digits=2)
+
 # Run a more limited set of statistics:
 
 gapminder %>% 

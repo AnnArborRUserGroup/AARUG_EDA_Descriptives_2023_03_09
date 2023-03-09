@@ -35,6 +35,8 @@ library(psych)
 library(tidyverse)
 library(inspectdf)
 library(janitor)
+library(skimr)
+library(inspecdf)
 
 library(Hmisc)
 library(summarytools)
@@ -277,12 +279,24 @@ Hmisc::html(
 
 # Packages for exploring a df:
 
+There are several packages for quick and easy EDA:
+
+*   inspectdf (https://www.littlemissdata.com/blog/inspectdf)<p>
+*    skimr (https://cmdlinetips.com/2018/03/skimr-a-r-package-to-skim-summary-data-effortlessly/, 
+https://www.datanovia.com/en/blog/display-a-beautiful-summary-statistics-in-r-using-skimr-package/)<p>
+*   DataExplorer (https://www.programmingwithr.com/how-to-automate-eda-with-dataexplorer-in-r/)<p>
+
+## Skimr
+
+```{r}
+
+skim(gapminder)
 
 
+```
 
 
-
-
+  
 
 
 

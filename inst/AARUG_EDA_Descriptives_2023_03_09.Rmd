@@ -176,67 +176,23 @@ gapminder %>%
   select_if(is.numeric) %>% 
   stat.desc() %>% 
   tibble::rownames_to_column(var="Statistic") %>% 
-  kable(caption = "<strong><center>Descriptive Statistics</center></strong>", full_width = F) %>%
+  kable(caption = "<strong><center>Descriptive Statistics</center></strong>", full_width = F,
+        escape = FALSE,
    col.names= c("Statistic <br/> Name",
                 "Year",
-                "Count",
                 "Life Expectancy",
                 "Population",
                 "GDP per<br/>Capita" )
 ) %>% 
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>% 
   column_spec(1, width = "5cm", bold = T) %>%
-  column_spec(2, width = "3cm") 
+  column_spec(2:5, width = "3cm") 
 
 
 
 ```
 
 
-
-## Tables using the kableExtra package:
-
-#### https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
-
-#### The first table is run with base styling.
-
-#### The second table is run with row striping, shorter row heights, and 'responsive' (with horizontal scrolling).
-
-
-```{r describe_functions, collapse=TRUE}
-
-# Set formatting options: 
-
-options(scipen=100)
-options(digits=2)
-
-# Describe function from Hmisc:
-
-Hmisc::describe(gapminder) 
-
-# gapminder %>%
-#   kable() %>%
-#   kable_styling()
-
-
-
-gapminder %>% 
-  select_if(is.numeric) %>% 
-  stat.desc(., basic=F)  %>% 
-  kable() %>%
-  kable_styling()
-
-
-gapminder %>% 
-  select_if(is.numeric) %>% 
-  stat.desc(., basic=F)  %>% 
-  kable() %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
-# Run a more limited set of statistics:
-
-
-
-```
 
 ```{r describe_by_group, collapse=TRUE}
 

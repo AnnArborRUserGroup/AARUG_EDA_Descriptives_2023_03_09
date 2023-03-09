@@ -54,16 +54,7 @@ library(kableExtra)
 ```{r import data, include=TRUE}
 
 
-gapminder <- read_csv("Data/gapminder_data.csv", 
-                      col_names=TRUE,
-                      cols(
-                        country = col_character(),
-                        year = col_integer(),
-                        continent = col_character(),
-                        pop = col_integer(),
-                        lifeExp = col_double(),
-                        gdpPercap = col_double()
-                      ))
+View(gapminder)
 
 ```
 

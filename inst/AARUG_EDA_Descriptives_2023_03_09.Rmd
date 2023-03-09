@@ -193,11 +193,38 @@ gapminder %>%
 ```
 
 
+# The <strong>describe<strong> packages
 
-```{r describe_by_group, collapse=TRUE}
+There are two describe commands, one in the Hmisc pacakge, and one in the psych
+package
 
 
+## Psyck describe
 
+Running the command, and then modifying the output:
+
+```{r describe, collapse=TRUE}
+
+
+gapminder %>%
+  dplyr::select_if( is.numeric) %>%
+  psych::describe() %>%
+  as.data.frame() %>%
+  dplyr::select(n) %>%
+  dplyr::mutate( n_missing = nrow(CData_df ) -n,
+                 Percent_missing =round(100*(n_missing/nrow(CData_df )),1)
+                ) %>%
+  dplyr::select(n, n_missing,Percent_missing ) %>%
+  tibble::rownames_to_column("Variable") %>%
+  kable(caption = "<strong>Miassing Values for Numeric Variables</strong>",
+        escape = FALSE,
+        col.names= c("Variable <br/> Name",
+                     "Count <br/>(non-missing)",
+                     "Count <br/>Missing",
+                     "Percent <br/>Missing" )
+  ) %>%
+  column_spec(1, width = "5cm", bold = T)%>%
+  column_spec(2:4, width = "3cm") 
 
 
 
